@@ -11,7 +11,7 @@ let user;
 let token;
 let name;
 let email;
-let logout;
+
 
 function pickColor() {
 	  r = floor(random(256));
