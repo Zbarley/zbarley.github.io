@@ -3,14 +3,12 @@ let r, g, b;
 let authPromise;
 let database;
 let rgbDiv;
+let email='simonezorzo@gmail.com';
+let password='password1';
 let bodyElement;
 let buttons = [];
 let ready = false;
 let dataSave;
-let provider;
-let user;
-let token;
-
 
 
 function pickColor() {
@@ -32,23 +30,22 @@ function setup() {
     storageBucket: "color-classifier-zbarley.appspot.com",
     messagingSenderId: "646085122999"
   };
-  provider = new firebase.auth.GoogleAuthProvider();
   firebase.initializeApp(config);
   database = firebase.database();
-  firebase.auth().signInWithPopup(provider).then(function(result) {
-  // This gives you a Google Access Token. You can use it to access the Google API.
-  token = result.credential.accessToken;
-  // The signed-in user info.
-  user = result.user;
-  }).catch(function(error) {
-  console.log(error.code + " " + error.message);
+  authPromise = firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  
   });
-  console.log(token);
-  console.log(user);
+
 
   createCanvas(100, 100).parent("#root");
+
   rgbDiv = createDiv().parent("#root");
+
   createCanvas(200, 200).parent('#root');
+
   rgbDiv = createDiv().parent('#root');
 
   bodyElement = document.body;
@@ -75,8 +72,7 @@ function setup() {
 
 
 async function sendData() {
-  console.log(token);
-  console.log(user);
+
      if(!ready) return;
       showLoading();
     let colorDatabase = database.ref('colors');
