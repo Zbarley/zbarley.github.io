@@ -36,14 +36,7 @@ function setup() {
   };
   provider = new firebase.auth.GoogleAuthProvider();
   firebase.initializeApp(config);
-  database = firebase.database();
-  if(token==null)
-    firebase.auth().signInWithPopup(provider).then(function(result) {  //login con account google OAuth
-      //GOOGLE API TOKEN
-       token = result.credential.accessToken;
-      // The signed-in user info.
-        user = result.user;
-    });
+  database = firebase.database();    
 
   
   createCanvas(100, 100).parent("#root");
@@ -67,8 +60,19 @@ function setup() {
   buttons.push(createButton('purple-ish').parent('#root').class('purple-ish'));
   buttons.push(createButton('brown-ish').parent('#root').class('brown-ish'));
   buttons.push(createButton('grey-ish').parent('#root').class('grey-ish'));
-
-  logout = createButton('logout').parent('#root');
+  firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    logout = createButton('logout').parent('#root');
+  } else {
+   firebase.auth().signInWithPopup(provider).then(function(result) {  //login con account google OAuth
+      //GOOGLE API TOKEN
+       token = result.credential.accessToken;
+      // The signed-in user info.
+        user = result.user;
+    });
+  }
+});
+  
   for (let i = 0; i < buttons.length; i++) {
     buttons[i].mouseClicked(sendData);
   }
