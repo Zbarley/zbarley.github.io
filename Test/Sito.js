@@ -43,7 +43,7 @@ function setup() {
     // The signed-in user info.
       user = result.user;
   });
- user = firebase.auth().currentUser;
+ //user = firebase.auth().currentUser;
 
   if (user != null) {
     name = user.displayName;
