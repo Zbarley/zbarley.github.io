@@ -7,7 +7,7 @@ let buttons = [];
 let ready = false;
 let dataSave;
 let provider;
-let user;
+let user=undefined;
 let token;
 let name;
 let email;
@@ -59,16 +59,15 @@ function setup() {
 		  buttons.push(createButton('grey-ish').parent('#root').class('grey-ish'));
 		  firebase.auth().onAuthStateChanged(function(user){
 			  if (!user){
-			   firebase.auth().signInWithPopup(provider).then(function(result) 
-				{  //login con account google OAuth
-					  //GOOGLE API TOKEN
-					   token = result.credential.accessToken;
-					  // The signed-in user info.
-						user = result.user;
+			   firebase.auth().signInWithPopup(provider).then(function(result){  //login con account google OAuth
+					//GOOGLE API TOKEN
+					token = result.credential.accessToken;
+					// The signed-in user info.
+					user = result.user;
 				});
 			  }else{
 				//user is logged
-			});
+			}});
 
 			  for (let i = 0; i < buttons.length; i++) {
 					buttons[i].mouseClicked(sendData);
