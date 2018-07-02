@@ -112,9 +112,9 @@ async function sendData() {
   }
     
   };
-logout.mouseClicked(logout());
+logout.mouseClicked(userLogout());
 }
-function logout(){
+function userLogout(){
   firebase.auth().signOut();
 }
 
