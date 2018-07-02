@@ -68,7 +68,7 @@ function setup() {
   buttons.push(createButton('brown-ish').parent('#root').class('brown-ish'));
   buttons.push(createButton('grey-ish').parent('#root').class('grey-ish'));
 
-
+  logout = createButton('logout').parent('#root');
   for (let i = 0; i < buttons.length; i++) {
     buttons[i].mouseClicked(sendData);
   }
@@ -79,7 +79,6 @@ async function sendData() {
         if (user) {
           name = user.displayName;
           email = user.email;
-          logout = createButton('logout').parent('#root');
         }else{
           name="anonymous";
           email="null";
