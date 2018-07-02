@@ -36,18 +36,13 @@ function setup() {
   firebase.initializeApp(config);
   database = firebase.database();
 
-  firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
-      .then(function() {
-        var provider = new firebase.auth.GoogleAuthProvider();
-        // In memory persistence will be applied to the signed in Google user
-        // even though the persistence was set to 'none' and a page redirect
-        // occurred.
-        return firebase.auth().signInWithPopup(provider))
-      .catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-  });
+  firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL); //Mantiene la sessione loggata
+  firebase.auth().signInWithPopup(provider).then(function(result) {  //login con account google OAuth
+    //GOOGLE API TOKEN
+     token = result.credential.accessToken;
+    // The signed-in user info.
+      user = result.user;
+  };
   createCanvas(100, 100).parent("#root");
   rgbDiv = createDiv().parent("#root");
   createCanvas(200, 200).parent('#root');
