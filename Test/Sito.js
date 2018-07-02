@@ -43,9 +43,8 @@ function setup() {
     // The signed-in user info.
       user = result.user;
   });
- //user = firebase.auth().currentUser;
-  console.log(user);
-  if (user != null) {
+ 
+  if (user.dispalyName != null) {
     name = user.displayName;
     email = user.email;
   }else{
