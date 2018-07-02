@@ -10,7 +10,8 @@ let dataSave;
 let provider;
 let user;
 let token;
-
+let name;
+let email;
 
 
 function pickColor() {
@@ -42,7 +43,16 @@ function setup() {
     // The signed-in user info.
       user = result.user;
   });
-  firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL); //Mantiene la sessione loggata
+ user = firebase.auth().currentUser;
+
+  if (user != null) {
+    name = user.displayName;
+    email = user.email;
+  }else{
+    name="anonymous";
+    email="null";
+  }
+
   
   createCanvas(100, 100).parent("#root");
   rgbDiv = createDiv().parent("#root");
@@ -81,7 +91,9 @@ async function sendData() {
       r: r,
       g: g,
       b: b,
-      label: this.html()
+      label: this.html(),
+      user: name,
+      email: email
     }
     console.log ("saving data");
     console.log(data);
