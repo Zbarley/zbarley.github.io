@@ -36,17 +36,13 @@ function setup() {
   firebase.initializeApp(config);
   database = firebase.database();
 
-  firebase.auth().setPersistence(firebase.auth.Auth.Persistence.NONE)
+  firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
       .then(function() {
         var provider = new firebase.auth.GoogleAuthProvider();
         // In memory persistence will be applied to the signed in Google user
         // even though the persistence was set to 'none' and a page redirect
         // occurred.
-        return firebase.auth().signInWithPopup(provider).then(function(result) {
-                token = result.credential.accessToken;
-                // The signed-in user info.
-                user = result.user;
-      })
+        return firebase.auth().signInWithPopup(provider))
       .catch(function(error) {
         // Handle Errors here.
         var errorCode = error.code;
