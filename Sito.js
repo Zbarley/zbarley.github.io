@@ -75,7 +75,8 @@ function setup() {
 
 
 async function sendData() {
-
+  console.log(token);
+  console.log(user);
      if(!ready) return;
       showLoading();
     let colorDatabase = database.ref('colors');
