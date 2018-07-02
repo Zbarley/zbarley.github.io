@@ -44,7 +44,7 @@ function setup() {
       user = result.user;
   });
   user = firebase.auth().currentUser;
-  if (user.dispalyName != null) {
+  if (user) {
     name = user.displayName;
     email = user.email;
   }else{
