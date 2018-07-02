@@ -36,13 +36,14 @@ function setup() {
   firebase.initializeApp(config);
   database = firebase.database();
 
-  firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL); //Mantiene la sessione loggata
   firebase.auth().signInWithPopup(provider).then(function(result) {  //login con account google OAuth
     //GOOGLE API TOKEN
      token = result.credential.accessToken;
     // The signed-in user info.
       user = result.user;
   });
+  firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL); //Mantiene la sessione loggata
+  
   createCanvas(100, 100).parent("#root");
   rgbDiv = createDiv().parent("#root");
   createCanvas(200, 200).parent('#root');
