@@ -42,7 +42,7 @@ function setup() {
      token = result.credential.accessToken;
     // The signed-in user info.
       user = result.user;
-  };
+  });
   createCanvas(100, 100).parent("#root");
   rgbDiv = createDiv().parent("#root");
   createCanvas(200, 200).parent('#root');
