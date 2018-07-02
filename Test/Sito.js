@@ -12,6 +12,7 @@ let user;
 let token;
 let name;
 let email;
+let logout;
 
 
 function pickColor() {
@@ -78,11 +79,11 @@ async function sendData() {
         if (user) {
           name = user.displayName;
           email = user.email;
+          logout = createButton('logout').parent('#root');
         }else{
           name="anonymous";
           email="null";
         }
-
      if(!ready) return;
       showLoading();
     let colorDatabase = database.ref('colors');
@@ -111,8 +112,12 @@ async function sendData() {
   }
     
   };
-
+logout.mouseClicked(logout());
 }
+function logout(){
+  firebase.auth().signOut();
+}
+
 
 function showLoading() {
   select('.loading').show();
