@@ -43,14 +43,6 @@ function setup() {
     // The signed-in user info.
       user = result.user;
   });
-  user = firebase.auth().currentUser;
-  if (user) {
-    name = user.displayName;
-    email = user.email;
-  }else{
-    name="anonymous";
-    email="null";
-  }
 
   
   createCanvas(100, 100).parent("#root");
@@ -82,6 +74,14 @@ function setup() {
 
 
 async function sendData() {
+    user = firebase.auth().currentUser;
+        if (user) {
+          name = user.displayName;
+          email = user.email;
+        }else{
+          name="anonymous";
+          email="null";
+        }
 
      if(!ready) return;
       showLoading();
