@@ -36,7 +36,7 @@ function setup() {
   provider = new firebase.auth.GoogleAuthProvider();
   firebase.initializeApp(config);
   database = firebase.database();
-
+  if(token==null)
   firebase.auth().signInWithPopup(provider).then(function(result) {  //login con account google OAuth
     //GOOGLE API TOKEN
      token = result.credential.accessToken;
