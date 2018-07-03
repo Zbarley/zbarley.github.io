@@ -20,14 +20,21 @@ function gotData(results){
 
 	let data = results.val();
 	let keys = Object.keys(data);
-	console.log(keys.length);
+	console.log(keys.length;
 
+	let email_bycount={};
 
 	for (let key of keys){
 		let record= data[key];
 		console.log(record.email);
 
+		if (!email_bycount[id]){
+			email_bycount[id]=1;
+		}
+		else{
+			email_bycount[id]++;
+		}
+
+		console.log(email_bycount);
 	}
-
-
 }
