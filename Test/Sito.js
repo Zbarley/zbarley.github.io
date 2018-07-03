@@ -110,7 +110,7 @@ function setup() {
 			  pickColor();
 			}
 		  };
-}
+}}
 
 
 function showLoading() {
