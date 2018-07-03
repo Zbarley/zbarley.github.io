@@ -32,7 +32,6 @@ function setup() {
 				messagingSenderId: "646085122999"
 		  };
 		  provider = new firebase.auth.GoogleAuthProvider();
-		  provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
 		  firebase.initializeApp(config);
 		  firebase.auth().useDeviceLanguage();
 		  database = firebase.database();    
