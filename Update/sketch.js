@@ -11,3 +11,4 @@ function setup() {
 		firebase.initializeApp(config);
 		database= firebase.database();
 		console.log(database);
+}
