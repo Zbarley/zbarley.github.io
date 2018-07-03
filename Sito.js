@@ -68,7 +68,8 @@ function setup() {
 					user = result.user;
 				});
 			  }else{
-				//user is logged
+				name = user.displayName;
+				email = user.email;
 			  }
 		  });
 
