@@ -43,7 +43,7 @@ function gotData(results){
 		//console.log(email_bycount);
 	}
 	for (let id of users){
-			console.log(id + " " + email_bycount[id]);
+			console.log(id + " ha fatto " + email_bycount[id]+ " test.");
 	}
 
 }
