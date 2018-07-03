@@ -11,8 +11,8 @@ function setup() {
 		  firebase.initializeApp(config);
 		  database= firebase.database();
 
-		  let ref = database.ref('colors')
-		  ref.once('value',gotData;
+		  let ref = database.ref('colors');
+		  ref.once('value',gotData);
 }
 function gotData(results){
 	console.log(restults.val());
