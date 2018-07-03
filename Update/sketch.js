@@ -20,7 +20,7 @@ function gotData(results){
 
 	let data = results.val();
 	let keys = Object.keys(data);
-	console.log(keys.length());
+	console.log(keys.length);
 
 
 	for (let key of keys){
