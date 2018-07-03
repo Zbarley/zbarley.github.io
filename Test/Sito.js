@@ -107,10 +107,12 @@ function setup() {
 			} else {
 			  console.log('Data saved successfully');
 			  setTimeout(hideLoading, 600);
-			  pickColor();
+					  pickColor();
 			}
-		  };
-}}
+		  
+		};
+	}
+}
 
 
 function showLoading() {
