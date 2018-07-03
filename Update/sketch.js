@@ -23,13 +23,14 @@ function gotData(results){
 	console.log(keys.length);
 
 	let email_bycount={};
-
+	let users= [];
 	for (let key of keys){
 		let record= data[key];
 		console.log(record.email);
 
 		if (!email_bycount[id]){
 			email_bycount[id]=1;
+			users.push(id);
 		}
 		else{
 			email_bycount[id]++;
