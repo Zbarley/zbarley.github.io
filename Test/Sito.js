@@ -67,11 +67,12 @@ function setup() {
 				});
 			  }else{
 				//user is logged
-			}});
-
-			  for (let i = 0; i < buttons.length; i++) {
-					buttons[i].mouseClicked(sendData);
 			  }
+		  });
+
+		for (let i = 0; i < buttons.length; i++) {
+				buttons[i].mouseClicked(sendData);
+		}
 
 
 		async function sendData() {
