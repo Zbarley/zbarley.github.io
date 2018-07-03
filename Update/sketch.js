@@ -49,8 +49,8 @@ function gotData(results){
 	groupColori();
 	for (let color of colorVector){
 		fill(0,0,0);
-		text(color,x,y);
-		y+=10
+		text(color,x,y+10);
+		y+=20
 		disegnaColori(color);
 		y+=30;
 		x=0;
