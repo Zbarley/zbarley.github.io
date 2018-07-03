@@ -26,7 +26,7 @@ function gotData(results){
 	let users= [];
 	for (let key of keys){
 		let record= data[key];
-		let id = record.displayName;
+		let id = record.user;
 		
 		if (!email_bycount[id]){
 			email_bycount[id]=1;
