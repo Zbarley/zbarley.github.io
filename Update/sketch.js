@@ -15,12 +15,12 @@ function setup() {
 		  ref.once('value',gotData);
 }
 function gotData(results){
-	console.log(results.val());
+	//console.log(results.val());
 	//processing
 
 	let data = results.val();
 	let keys = Object.keys(data);
-	console.log(keys.length);
+	//console.log(keys.length);
 
 	let email_bycount={};
 	let users= [];
