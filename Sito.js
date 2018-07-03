@@ -84,8 +84,8 @@ function setup() {
 				  name = user.displayName;
 				  email = user.email;
 				}else{
-				  name="anonymous";
-				  email="null";
+				  //name="anonymous";
+				  //email="null";
 				}
 			 if(!ready) return;
 			  showLoading();
