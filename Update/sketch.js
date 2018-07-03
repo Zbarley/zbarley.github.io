@@ -57,7 +57,7 @@ function gotData(results){
 function groupColori(){
 	for (let key of keys){
 		let record = data [key];
-		let col = color(record.r,recor.g,record.b);
+		let col = color(record.r,record.g,record.b);
 		colorByLabel[record.label].push(col);
 	}
 }
