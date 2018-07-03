@@ -24,7 +24,7 @@ function gotData(results){
 
 
 	for (let key of keys){
-		let record= deta[key];
+		let record= data[key];
 		console.log(record.email);
 
 	}
