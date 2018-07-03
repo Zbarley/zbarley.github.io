@@ -1,3 +1,20 @@
+let colorByLabel = {
+'red-ish': [],
+'green-ish': [],
+'blue-ish': [],
+'orange-ish': [],
+'yellow-ish': [],
+'pink-ish': [],
+'purple-ish': [],
+'brown-ish': [],
+'grey-ish': []
+}
+
+
+
+
+
+
 function setup() {
 		  // Initialize Firebase
 		  var config = {
@@ -21,7 +38,11 @@ function gotData(results){
 	let data = results.val();
 	let keys = Object.keys(data);
 	//console.log(keys.length);
+	classifica(keys);
+	
 
+}
+function classifica(keys){
 	let email_bycount={};
 	let users= [];
 	for (let key of keys){
@@ -45,5 +66,4 @@ function gotData(results){
 	for (let id of users){
 			console.log(id + " ha fatto " + email_bycount[id]+ " test.");
 	}
-
 }
