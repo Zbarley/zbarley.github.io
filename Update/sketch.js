@@ -34,6 +34,13 @@ function gotData(results){
 		else{
 			email_bycount[id]++;
 		}
+		users= users.sort(function(a,b){
+			return (email_bycount[a] - email_bycount[b]);
+
+		})
+		for (let id of users){
+			console.log(id + " " + email_bycount[id]);
+		}
 
 		console.log(email_bycount);
 	}
