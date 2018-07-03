@@ -9,17 +9,19 @@ let colorByLabel = {
 'brown-ish': [],
 'grey-ish': []
 }
-let recrod;
+
 let data;
 let keys;
 let ref;
 let email_bycount={};
 let users= [];
-
+let x=0;
+let y=0;
 
 
 
 function setup() {
+	createCanvas(400,400);
 		  // Initialize Firebase
 		  var config = {
 				apiKey: "AIzaSyASOr3yFQVk4yRcp0uzkKWI1lX0ewYdLtM",
@@ -43,22 +45,35 @@ function gotData(results){
 	keys = Object.keys(data);
 	//console.log(keys.length);
 	classifica(keys);
+	groupColori();
 	for (let color of colorByLabel){
-		disegnaColori(color,keys);
+		disegnaColori(color);
+		x+=40;
 	}
 	
 
 }
 
-function disegnaColori(color,keys){
-	record= data[key]
+function groupColori(){
+	for (let key of keys){
+		let record = data [key];
+		let col = color(record.r,recor.g,record.b);
+		colorByLabel[record.label].push(col);
+	}
+}
 
-
-
-
-
-
-
+function disegnaColori(color){
+	let colore = colorByLabel[color];
+	for (let i =0; i<colore.length;i++){
+		noStroke();
+		fill(colore[i]);
+		rect(x,y,10,10);
+		x+=10;
+		if (x>=width){
+			x=0;
+			y+=10; 
+		}
+	}
 
 
 
@@ -66,11 +81,11 @@ function disegnaColori(color,keys){
 
 
 }
-function classifica(keys){
+function classifica(){
 
 	for (let key of keys){
-		record= data[key];
-		id = record.user;
+		let record= data[key];
+		let id = record.user;
 		
 		if (!email_bycount[id]){
 			email_bycount[id]=1;
