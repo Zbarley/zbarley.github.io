@@ -16,4 +16,18 @@ function setup() {
 }
 function gotData(results){
 	console.log(results.val());
+	//processing
+
+	let data = results.val();
+	let keys = Object.keys(data);
+	console.log(keys.length());
+
+
+	for (let key of keys){
+		let record= deta[key];
+		console.log(record.email);
+
+	}
+
+
 }
