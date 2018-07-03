@@ -60,7 +60,8 @@ function setup() {
 		  buttons.push(createButton('grey-ish').parent('#root').class('grey-ish'));
 		  firebase.auth().onAuthStateChanged(function(user){
 			  if (!user){
-			   firebase.auth().signInWithPopup(provider).then(function(result){  //login con account google OAuth
+			   firebase.auth().signInWithRedirect(Provider);
+				 firebase.auth().getRedirectResult().then(function(result){  //login con account google OAuth
 					//GOOGLE API TOKEN
 					token = result.credential.accessToken;
 					// The signed-in user info.
