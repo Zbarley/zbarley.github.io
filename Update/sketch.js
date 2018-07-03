@@ -79,12 +79,6 @@ function disegnaColori(color){
 			y+=10; 
 		}
 	}
-
-
-
-
-
-
 }
 function classifica(){
 
