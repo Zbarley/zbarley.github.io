@@ -51,6 +51,7 @@ function gotData(results){
 		print(color);
 		disegnaColori(color);
 		y+=40;
+		x=0;
 	}
 	
 
