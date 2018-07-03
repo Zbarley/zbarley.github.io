@@ -43,6 +43,6 @@ function gotData(results){
 			console.log(id + " " + email_bycount[id]);
 		}
 
-		console.log(email_bycount);
+		//console.log(email_bycount);
 	}
 }
