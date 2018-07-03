@@ -39,10 +39,11 @@ function gotData(results){
 			return (email_bycount[a] - email_bycount[b]);
 
 		})
-		for (let id of users){
-			console.log(id + " " + email_bycount[id]);
-		}
-
+		
 		//console.log(email_bycount);
 	}
+	for (let id of users){
+			console.log(id + " " + email_bycount[id]);
+	}
+
 }
