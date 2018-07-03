@@ -15,5 +15,5 @@ function setup() {
 		  ref.once('value',gotData);
 }
 function gotData(results){
-	console.log(restults.val());
+	console.log(results.val());
 }
