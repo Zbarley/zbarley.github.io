@@ -22,7 +22,7 @@ let y=0;
 
 
 function setup() {
-	createCanvas(400,700);
+	createCanvas(windowWidth,700);
 		  // Initialize Firebase
 		  var config = {
 				apiKey: "AIzaSyASOr3yFQVk4yRcp0uzkKWI1lX0ewYdLtM",
