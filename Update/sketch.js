@@ -9,8 +9,12 @@ let colorByLabel = {
 'brown-ish': [],
 'grey-ish': []
 }
-
-
+let recrod;
+let data;
+let keys;
+let ref;
+let email_bycount={};
+let users= [];
 
 
 
@@ -28,26 +32,45 @@ function setup() {
 		  firebase.initializeApp(config);
 		  database= firebase.database();
 
-		  let ref = database.ref('colors');
+		  ref = database.ref('colors');
 		  ref.once('value',gotData);
 }
 function gotData(results){
 	//console.log(results.val());
 	//processing
 
-	let data = results.val();
-	let keys = Object.keys(data);
+	data = results.val();
+	keys = Object.keys(data);
 	//console.log(keys.length);
 	classifica(keys);
+	for (let color of colorByLabel){
+		disegnaColori(color,keys);
+	}
 	
 
 }
+
+function disegnaColori(color,keys){
+	record= data[key]
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
 function classifica(keys){
-	let email_bycount={};
-	let users= [];
+
 	for (let key of keys){
-		let record= data[key];
-		let id = record.user;
+		record= data[key];
+		id = record.user;
 		
 		if (!email_bycount[id]){
 			email_bycount[id]=1;
