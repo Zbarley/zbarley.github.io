@@ -9,6 +9,7 @@ let colorByLabel = {
 'brown-ish': [],
 'grey-ish': []
 }
+let colorVector['red-ish','green-ish','blue-ish','orange-ish','yellow-ish','pink-ish','purple-ish','brown-ish','grey-ish'];
 
 let data;
 let keys;
@@ -46,7 +47,7 @@ function gotData(results){
 	//console.log(keys.length);
 	classifica(keys);
 	groupColori();
-	for (let color of colorByLabel){
+	for (let color of colorVector){
 		disegnaColori(color);
 		x+=40;
 	}
