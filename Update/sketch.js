@@ -48,7 +48,7 @@ function gotData(results){
 	classifica(keys);
 	groupColori();
 	for (let color of colorVector){
-		document.print(color);
+		fillText(color,10,100);
 		disegnaColori(color);
 		y+=40;
 		x=0;
