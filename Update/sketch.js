@@ -20,7 +20,7 @@ function gotData(results){
 
 	let data = results.val();
 	let keys = Object.keys(data);
-	console.log(keys.length;
+	console.log(keys.length);
 
 	let email_bycount={};
 
@@ -34,7 +34,7 @@ function gotData(results){
 		else{
 			email_bycount[id]++;
 		}
-		users= users.sort(function(a,b){
+		users.sort(function(a,b){
 			return (email_bycount[a] - email_bycount[b]);
 
 		})
