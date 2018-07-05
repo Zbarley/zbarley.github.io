@@ -73,11 +73,11 @@ function disegnaColori(color){
 		noStroke();
 		fill(colore[i]);
 		rect(x,y,10,10);
-		if (x+10>=width){
-			x=-10;
+		x=+10;
+		if (x>=width-10){
+			x=0;
 			y+=10; 
 		}
-		x=+10;
 	}
 }
 function classifica(){
