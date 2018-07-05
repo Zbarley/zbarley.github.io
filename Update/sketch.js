@@ -74,7 +74,7 @@ function disegnaColori(color){
 		fill(colore[i]);
 		rect(x,y,10,10);
 		x=+10;
-		if (x>=(windowWidth){
+		if (x>=windowWidth){
 			x=0;
 			y+=10; 
 		}
